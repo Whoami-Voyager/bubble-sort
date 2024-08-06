@@ -1,5 +1,15 @@
 function bubbleSort(arr) {
-  // type your code here
+  if (2 > arr.length) {
+    return arr
+  }
+
+  const bubble = []
+  for (const int of arr) {
+    const indx = arr.indexOf(int)
+    if (int > arr[indx + 1]) {
+      console.log(int)
+    }
+  }
 }
 
 if (require.main === module) {
@@ -27,3 +37,6 @@ module.exports = bubbleSort;
 
 // Please add your pseudocode to this file
 // And a written explanation of your solution
+
+// If the array is empty or has 1 item, it returns the inputted array
+// Iteraties through the array, and if the previous value is smaller than the current value, it shifts it higher in the index of the array
