@@ -1,15 +1,22 @@
 function bubbleSort(arr) {
-  if (2 > arr.length) {
-    return arr
+  let sorted = false;
+
+  while (!sorted) {
+    sorted = true;
+
+    arr.forEach((num, idx) => {
+      if (idx === arr.length - 1) {
+        return;
+      }
+
+      if (num > arr[idx + 1]) {
+        [arr[idx], arr[idx + 1]] = [arr[idx + 1], arr[idx]];
+        sorted = false;
+      }
+    });
   }
 
-  const bubble = []
-  for (const int of arr) {
-    const indx = arr.indexOf(int)
-    if (int > arr[indx + 1]) {
-      console.log(int)
-    }
-  }
+  return arr;
 }
 
 if (require.main === module) {
